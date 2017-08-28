@@ -1,17 +1,18 @@
 import { Component } from '@angular/core';
+import { Hero } from "./hero";
 
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html'
 })
 export class AppComponent  {
-  name = 'Angular';
 
-  title: string;
-  hero: string;
+  heroes: Hero[] = [
+    new Hero(1, 'Windstorm'),
+    new Hero(13, 'Bombasto'),
+    new Hero(15, 'Magneta')
+  ];
 
-  constructor(){
-    this.title = 'Tour of Heroes';
-    this.hero = 'Windstorm';
-  }
+  myHero = this.heroes[0];
+
 }
